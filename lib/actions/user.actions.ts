@@ -32,7 +32,7 @@ export async function updateUser(
             name,
             bio,
             image,
-            onboarded: true,
+            onboarding: true,
         },
         { upsert: true} //this is a combination of update & insert in DB
         )
@@ -41,6 +41,6 @@ export async function updateUser(
             revalidatePath(path);
         }
     } catch (error : any) {
-        throw new Error(`Failed to create/update user : ${error.message}`)
+        throw new Error(`Failed to create/update user: ${error.message}`);
     }
 }
