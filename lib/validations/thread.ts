@@ -7,7 +7,6 @@ export const threadValidation = z.object({
 });
 
 // Validation of a comment which is in itself a thread too
-// export const threadValidation = z.object({
-//     thread : z.string().nonempty().min(3, {message: "minimun 3 characters"}),
-//     accountId : z.string()
-// });
+export const commentValidation = z.object({
+    thread : z.string().nonempty().min(3, {message: "minimun 3 characters"}),
+});

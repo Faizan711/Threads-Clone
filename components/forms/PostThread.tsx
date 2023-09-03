@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Textarea } from "../ui/textarea";
 import { usePathname, useRouter } from "next/navigation";
+import { threadValidation } from "@/lib/validations/thread";
+import { createThread } from "@/lib/actions/thread.actions";
 import {
     Form,
     FormControl,
@@ -14,8 +16,6 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { threadValidation } from "@/lib/validations/thread";
-import { createThread } from "@/lib/actions/thread.actions";
 
 //change to update/create thread
 // import { updateUser } from "@/lib/actions/user.actions";
