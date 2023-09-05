@@ -144,3 +144,33 @@ export async function fetchUsers({
         throw new Error(`Failed to fetch Users : ${error.message}`);
     }
 }
+
+
+export async function getActivity(userId : string){
+    try {
+        connectToDb();
+
+        //find all threads of the user
+        const userThreads = await Thread.find({author: userId});
+
+        //collect all children threads id 
+        const childThreadIds = userThreads.reduce((acc, userThread) => {
+            return acc.concat(userThread.children)
+        },[]) //we have to pass this array not as a dependency but as a default value for acc
+
+        //get the replies (basically the threads with different owners on my thread)
+        const replies = await Thread.find({
+            _id: {$in : childThreadIds},
+            author: {$ne : userId}
+        }).populate({
+            path: 'author',
+            model: User,
+            select: 'name image _id'
+        })
+
+        return replies;
+
+    } catch (error : any) {
+        throw new Error(`Failed to fetch activities : ${error.message}`);
+    }
+}
