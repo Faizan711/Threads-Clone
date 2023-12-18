@@ -1,8 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Threads Clone
+
+Full Stack MERN Next.js 13 Threads App | React, Next JS, TypeScript, MongoDB with Clerk for Auth
+
+![Project Image](public/threads-main.png)
+
+## Summary
+ * Next.js 13.4 with Server Side Rendering
+ * MongoDB handling of complex schemas, multiple data population
+ * Beautiful layouts with TailwindCSS
+ * Clerk for authentication
+ * uploads with UploadThing
+ * Shadcn for UI
+ * Real-time events with webhooks
+ * Validate data with Zod
+ * Solid application architecture
+
 
 ## Getting Started
 
-First, run the development server:
+To get started with this project, run
+
+```bash
+  git clone https://github.com/Faizan711/Threads-Clone.git
+```
+
+and copy the .env.example variables into a separate .env file, fill them out & and that's all you need to get started!
+
+Install the dependencies by running
+
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+Lastly, run the development server:
 
 ```bash
 npm run dev
